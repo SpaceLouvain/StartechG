@@ -99,7 +99,7 @@
   .chatbox-header {
     height: 50px; /* adjust as needed */
     cursor: pointer;
-    background-color: aqua;
+    background-color: rgb(255, 1, 213);
     position: fixed;
 
   }
@@ -139,7 +139,7 @@
     width: 100px;
     overflow: auto;
     padding: 1em;
-    background-color: #9fb7ff;
+    background-color: #717272;
   }
   .nav-item {
     display: flex;
