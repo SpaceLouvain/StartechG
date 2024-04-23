@@ -111,6 +111,18 @@
         currentVideoUrl = `https://www.youtube.com/embed/${questions[currentQuestion].lien.split('v=')[1]}`;
     }
 
+    function previousQuestion() {
+        if (currentQuestion > 0) {
+            currentQuestion--;
+            if (questions[currentQuestion].selectedAnswer === questions[currentQuestion].correctAnswer) {
+                score.update(n => n - 1);
+            }
+        }
+        showScore = false;
+        showVideo = false;
+        message = "";
+    }
+
 </script>
 {#if showScore}
     <div>
@@ -153,11 +165,15 @@
 {#if showVideo}
 <iframe width="560" height="315" src="{currentVideoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {/if}
-        <div>
-            <button on:click={nextQuestion}>
-            <img src="/./next.webp" alt="ImageA" />
-            </button>
-        </div>
+
+<div  class="fleche_next" on:click={nextQuestion}>
+    <img src="/./fleche.png" alt="gay">
+</div>
+
+<div  class="fleche_previous" on:click={previousQuestion}>
+    <img src="/./fleche.png" alt="gay">
+</div>
+
     {:else}
         <h1>Score: {score}/{questions.length}</h1>
     {/if}
@@ -210,5 +226,23 @@
     }
     h1 {
         text-align: center;
+    }
+    .fleche_next {
+        position: absolute;
+        right: 300px;
+        bottom: -100px;
+    }
+    .fleche_next img{
+        width: 100px;
+    }
+
+    .fleche_previous {
+        position: absolute;
+        left: 300px;
+        bottom: -100px;
+        transform: rotate(180deg);
+    }
+    .fleche_previous img{
+        width: 100px;
     }
 </style>

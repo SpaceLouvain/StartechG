@@ -135,12 +135,12 @@
   }
 
     
-      .left-column {
+  .left-column {
     position: fixed;
     left: 0;
     top: 0;
     bottom: 0;
-    width: 130px;
+    width: 160px;
     overflow: auto;
     padding: 1em;
     background-color: #0b0ba052;
