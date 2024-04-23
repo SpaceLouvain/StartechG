@@ -129,7 +129,7 @@
 <h1>CHIMIE 2023</h1>
 
 <a  class="image-link" on:click={handleImageClick}>
-    <img src="C:/Users/sasso/OneDrive/Bureau/STARTECHFINAL/StartechG/static/ampoule.png" alt="gay">
+    <img src="/./ampoule.png" alt="gay">
 </a>
 
 <main>
@@ -155,7 +155,7 @@
 {/if}
         <div>
             <button on:click={nextQuestion}>
-            <img src="././next.webp" alt="ImageA" />
+            <img src="/./next.webp" alt="ImageA" />
             </button>
         </div>
     {:else}

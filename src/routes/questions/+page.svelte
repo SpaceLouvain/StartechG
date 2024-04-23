@@ -1,10 +1,12 @@
 <script>
-    import { score } from './store.js';
+    
+    
+    import { score, status } from './store.js';
 
 
 
     let tests = [
-        { title: "chimie2023", score: null, status: "Not Started" },
+        { title: "chimie2023", score: null, status: null },
    ];
 </script>
 
@@ -16,8 +18,14 @@
     .not-started {
         background-color: lightgray;
     }
+    .not-finished {
+        background-color: red;
+    }
+    table {
+        margin-left: auto;
+        margin-right: auto;
+    }
 </style>
-
 <table>
     <thead>
         <tr>
@@ -28,9 +36,9 @@
     </thead>
     <tbody>
         {#each tests as test (test.title)}
-            <tr class={test.status.toLowerCase().replace(" ", "-")}>
+            <tr class={$status.toLowerCase().replace(" ", "-")}>
                 <td><a href={`/test/${test.title}`}>{test.title}</a></td>                
-                <td>{test.status}</td>
+                <td>{$status}</td>
                 <td>{$score !== null ? $score : "N/A"}</td>            </tr>
         {/each}
     </tbody>

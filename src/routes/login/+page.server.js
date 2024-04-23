@@ -13,12 +13,21 @@ export const actions = {
 		const email = formData.get('email');
 		const password = formData.get('password');
 		const db = await getDatabase();
-		const user = await new Promise((resolve, reject) => {
-			db.get('SELECT * FROM users WHERE email = ?', [email], (err, row) => {
-				if (err) return reject(err);
-				resolve(row);
-			});
-		});
+        let user = null;
+
+		try {
+            user = await new Promise((resolve, reject) => {
+                db.get('SELECT * FROM users WHERE email = ?', [email], (err, row) => {
+                    if (err) return reject(err);
+                    resolve(row);
+                });
+            });
+
+
+    } catch (err) {
+        console.error(err);
+        throw new Error('Database error');
+    }
 
 		if (!user) {
 			throw redirect(302, '/ratio');

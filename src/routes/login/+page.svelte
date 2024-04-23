@@ -1,14 +1,14 @@
 <script>
-	/**
-	 * @type {import('./$types').PageData}
-	 */
-	export let form;
+  /**
+   * @type {import('./$types').PageData}
+   */
+	export let form  = { error: null };
 </script>
 
 <div id="login">
 	<h1>Login</h1>
-	{#if form.error}
-		<div class="error">
+  {#if form && form.error}
+  		<div class="error">
 			<p>Wrong username/password</p>
 		</div>
 	{/if}
