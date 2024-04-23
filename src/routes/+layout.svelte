@@ -54,7 +54,6 @@
 <header>
   <div style="text-align: center;">
       <img src="eduhub1.png" alt="Person" width="150"><br>
-      <Title title="Student's favorite HUB"/>
   </div>
 </header>
 
