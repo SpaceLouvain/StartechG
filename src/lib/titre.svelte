@@ -1,10 +1,9 @@
 <script>
    export let title = "Edu Hub Formation"
 </script>
-<div class ="title">
-    <img src= "/eduhub1.png" alt="logo site">
-    <h1>{title}</h1>
-</div>
+
+
+
 
 
 <style>
