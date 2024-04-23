@@ -91,7 +91,7 @@
 
 <div class="main-content">
   <div class="box1">
-    <img src="\flamme.jpg" alt="flamme">
+    <img src="\personne.png" alt="flamme">
     <p>Bravo ! Votre flamme est allumé depuis 3 jours !</p>
   </div>
   <div class="box2">
