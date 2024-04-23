@@ -138,7 +138,9 @@
     </div>
 {:else}
 
-<h1>CHIMIE 2023</h1>
+
+<h1 class="title">CHIMIE 2023</h1>
+
 
 <a  class="image-link" on:click={handleImageClick}>
     <img src="/./ampoule.png" alt="gay">
@@ -148,7 +150,7 @@
     <div class="center-content">
 
     {#if currentQuestion < questions.length}
-        <h1>{questions[currentQuestion].question}</h1>
+        <h1 class="question">{questions[currentQuestion].question}</h1>
         <div class="answer-container">
             {#each questions[currentQuestion].answers as answer, index}
             <button 
@@ -230,19 +232,30 @@
     .fleche_next {
         position: absolute;
         right: 300px;
-        bottom: -100px;
+        bottom: 100px;
     }
     .fleche_next img{
         width: 100px;
+        margin-top: 100px; /* Ajustez la marge supérieure selon vos préférences */
     }
 
     .fleche_previous {
         position: absolute;
         left: 300px;
-        bottom: -100px;
+        bottom: 100px;
         transform: rotate(180deg);
+        bottom: 100px;
     }
     .fleche_previous img{
         width: 100px;
     }
+
+    .title {
+        margin-bottom: 10px; /* remove the bottom margin from the title */
+    }
+
+    .question {
+    margin-top: -300px; /* Ajustez la marge supérieure selon vos préférences */
+}
+
 </style>
