@@ -140,9 +140,9 @@
 
 <h1>CHIMIE 2023</h1>
 
-<a  class="image-link" on:click={handleImageClick}>
+<div  class="image-link" on:click={handleImageClick}>
     <img src="/./ampoule.png" alt="gay">
-</a>
+</div>
 
 <main>
     <div class="center-content">
