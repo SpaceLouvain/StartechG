@@ -6,9 +6,8 @@
 </script>
 
 <div id="login">
-    <h1>Login <img src="\flamme.jpg" alt="Person"></h1>
-    {#if form.error}
-        <div class="error">
+    <!-- <h1>Login <img src="\flamme.jpg" alt="Person"></h1> -->
+    {#if form && form.error}        <div class="error">
             <p>Wrong username/password</p>
         </div>
     {/if}
