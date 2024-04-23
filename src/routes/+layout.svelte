@@ -8,9 +8,9 @@
         { text: 'PROFIL', logo: '\lamme.jpg', href: '/profil' },
 
     { text: 'QUESTIONS', logo: '\lamme.jpg', href: '/questions' },
-    { text: 'SYNTHESES', logo:'\synthese.webp', href: '/parametres' },
+    { text: 'SYNTHESES', logo:'\synthese.webp', href: '/syntheses' },
     { text: 'PROGRESSION', logo: 'https://via.placeholder.com/24', href: '/progression' },
-    { text: 'COMMUNAUTE', logo: '\communauté.jpg', href: '/commune' },
+    { text: 'COMMUNAUTE', logo: '\communauté.jpg', href: '/forum' },
     { text: 'COACH', logo: '\coach.jpg', href: '/coach' },
     { text: 'PARAMETRES', logo: '\parametres.avif', href: '/parametres' },
     ];
