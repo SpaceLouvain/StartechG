@@ -1,8 +1,18 @@
 <script>
-  let message = "Nous n'avons pas encore de synthèse à proposer";
+  let message = "Nous n'avons pas encore de synthèse à proposer. C'est pour bientôt !";
+  let isLoading = true;
+
+  // Simulate an API call to fetch the synthesis data
+  setTimeout(() => {
+    isLoading = false;
+  }, 1000);
 </script>
 
 <main>
-  <h1>{message}</h1>
+  {#if isLoading}
+    <p>Loading...</p>
+  {:else}
+    <h1>{message}</h1>
+  {/if}
 </main>
 
