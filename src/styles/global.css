@@ -5,8 +5,9 @@ body {
   margin: 0;
 }
 h1,h2,h3,h4,a,p,li {
-  color: #032e5d;
-  font-family: 'VT323', monospace;
+  color: #000103;
+  font-family: 'Fira', sans-extra-condensed;
   font-weight: normal;
+  
 }
 

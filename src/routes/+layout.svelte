@@ -52,7 +52,7 @@
 </script>
 
 <header>
-    <Title title ="Super G"/>
+    <Title title ="Student's favorite HUB"/>
 </header>
 
 <main>
@@ -69,6 +69,8 @@
 </footer>
 
 <style>
+
+     
     .chatbox p.outgoing {
     background-color: #ddd; /* change the background color of outgoing messages */
   }
@@ -139,7 +141,7 @@
     width: 100px;
     overflow: auto;
     padding: 1em;
-    background-color: #717272;
+    background-color: #0b0ba052;
   }
   .nav-item {
     display: flex;
@@ -162,28 +164,18 @@
         text-align: center;
     }
 </style>
-<div class={expanded ? 'chatbox expanded' : 'chatbox'}>
-    <div class="chatbox-header" role="button" tabindex="0" on:click={expandChatbox} on:keydown={handleKeyDown}>
-      <button class="shrink-button" on:click|stopPropagation={shrinkChatbox}>Shrink</button>
-    </div>
-    {#each messages as msg (msg.text)}
-      <p class={msg.type}>
-        <span class="timestamp">{msg.timestamp}</span> <span class="sender">{msg.sender}:</span> {msg.text}
-      </p>
-    {/each}
-    <input type="text" bind:value={message} placeholder="Type a message...">
-    <button on:click|stopPropagation={sendMessage}>Send</button>
-  
-<div class="chatbox">
-    {#each messages as msg (msg.text)}
-      <p class={msg.type}>
-        <span class="timestamp">{msg.timestamp}</span> <span class="sender">{msg.sender}:</span> {msg.text}
-      </p>
-    {/each}
-    <input type="text" bind:value={message} placeholder="Type a message...">
-    <button on:click={sendMessage}>Send</button>
+<!-- <div class={expanded ? 'chatbox expanded' : 'chatbox'}>
+  <div class="chatbox-header" role="button" tabindex="0" on:click={expandChatbox} on:keydown={handleKeyDown}>
+    <button class="shrink-button" on:click|stopPropagation={shrinkChatbox}>Shrink</button>
   </div>
-</div>
+  {#each messages as msg (msg.text)}
+    <p class={msg.type}>
+    <span class="timestamp">{msg.timestamp}</span> <span class="sender">{msg.sender}:</span> {msg.text}
+    </p>
+  {/each}
+  <input type="text" bind:value={message} placeholder="Type a message...">
+  <button on:click|stopPropagation={sendMessage}>Send</button>
+</div> -->
 
 <div class="left-column">
     {#each navItems as item (item.text)}
@@ -194,7 +186,7 @@
     {/each}
   </div>
 
-<div class="chatbox-header" role="button" tabindex="0" on:click={expandChatbox} on:keydown={handleKeyDown}>
-  &nbsp; <!-- non-breaking space -->
+<!-- <div class="chatbox-header" role="button" tabindex="0" on:click={expandChatbox} on:keydown={handleKeyDown}>
+  &nbsp; 
   <button class="shrink-button" on:click|stopPropagation={shrinkChatbox}>Shrink</button>
-</div>
+</div> -->

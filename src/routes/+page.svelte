@@ -5,7 +5,7 @@
 	export let data;
 </script>
 
-<div id="register">
+<div id="login">
 	<h1>Login</h1>
 	{#if data.error}
 		<div class="error">
