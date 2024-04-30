@@ -35,3 +35,18 @@ export async function getUserById(id) {
 	const result = await db.get(`SELECT * FROM users WHERE id = ?`, id);
 	return result;
 }
+
+export async function verifyUser(username, password) {
+    const db = await getDatabase();
+    const user = await db.get(`SELECT * FROM users WHERE username = ?`, username);
+
+    // If user doesn't exist
+    if (!user) {
+        return false;
+    }
+
+    // Check if the password is correct
+    const passwordMatch = await bcrypt.compare(password, user.password);
+
+    return passwordMatch;
+}

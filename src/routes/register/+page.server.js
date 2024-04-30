@@ -23,6 +23,12 @@ export const actions = {
 			email
 		});
 
+		if (!userId) {
+			throw redirect(302, '/errorPage');
+
+			
+		}
+
 		// set cookie
 		cookies.set('userId', userId, { path: '/' }); // specify the path here
 		// redirect to home page
