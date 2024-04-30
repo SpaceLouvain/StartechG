@@ -149,7 +149,8 @@
 <h1 class="title">BIO 2023</h1>
 
 
-<div  class="image-link" on:click={handleImageClick}>
+
+<div  class="ampoule" on:click={handleImageClick}>
     <img src="/./ampoule.png" alt="gay">
 </div>
 
@@ -158,20 +159,20 @@
     {#if currentQuestion < questions.length}
         <h1 class="question">{questions[currentQuestion].question}</h1>
         {#if currentQuestion === 2} <!-- Afficher une image pour la question 3 -->
-            <div class="question-image">
+            <div class="imgq3">
                 <img src="\.\bioq3.png" alt="Description de l'image">
             </div>
         {/if}
         {#if currentQuestion === 6} <!-- Afficher une image pour la question 7 -->
-            <div class="question-image">
+            <div class="imgq7">
                 <img src="\.\bioq7.png" alt="Description de l'image">
             </div>
         {/if}
         {#if currentQuestion === 8} <!-- Afficher deux images pour la question 9 -->
-            <div class="question-image">
+            <div class="imgq91">
                 <img src="\.\bioq9img1.png" alt="Description de l'image 1">
             </div>
-            <div class="question-image">
+            <div class="imgq92">
                 <img src="\.\bioq9img2.png" alt="Description de l'image 2">
             </div>
         {/if}
@@ -209,6 +210,9 @@
 </main>
 {/if}
 <style>
+    .title{
+
+    }
     .center-content {
         display: flex;
         flex-direction: column;
@@ -216,13 +220,13 @@
         justify-content: center;
         height: 100vh; /* adjust as needed */
     }
-    .image-link {
+    .ampoule {
     position: absolute;
-    right: 935px;
+    right: 150px;
     bottom: 150px;
     
     }
-    .image-link img {
+    .ampoule img {
         width: 50px;
         height: 50px;
     }
@@ -282,5 +286,16 @@
     .question {
     margin-top: -300px; /* Ajustez la marge supérieure selon vos préférences */
 }
+
+.imgq3 img {
+        
+        width: 70%; /* or any other size */
+        left: 500px; /* center the image */
+    }
+
+.question-3 {
+    margin-top: 10px; /* Ajustez la marge supérieure selon vos préférences */
+}
+
 
 </style>
