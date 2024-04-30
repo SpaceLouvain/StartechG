@@ -2,76 +2,125 @@
     import { score } from '/src/routes/questions/store.js';
     import Katex from 'svelte-katex'
 
-    let q = 'a+b^2'
     let questions = [
-        {
-            question: q,
-            /*question: "Question 1. Quel volume d'une solution aqueuse de sulfate d'hydrogène (50 % en masse, d = 0,980) faut-il prélever pour obtenir 200 mL d'une solution 0,100 mol/L en ce composé ?",*/
-            answers: ["A. 1,00 mL", "B. 2,00 mL", "C. 4,00 mL", "D. 40,0 mL"],
-            correctAnswer: 2,
-            selectedAnswer: null,
-            lien : "https://www.youtube.com/watch?v=Wi3ces6kV1Y",
-        },
-        {
-            question: "Question 2. Considérons le mélange d'acétone (C3H6O) et de disulfure de carbone (CS2) suivant: Quelle est la proposition correcte?",
-            answers: ["A. La fraction molaire de l'acétone est de 0,40", "B. La fraction molaire du disulfure de carbone est de 0,40", "C. La fraction molaire de l'acétone est de 0,67", "D. La fraction molaire du disulfure de carbone est de 0,80"],
-            correctAnswer: 0,
-            selectedAnswer: null,
-            lien : "https://www.youtube.com/watch?v=KyzbEmao6vw",
-        },
-        {
-            question: "Question 3. Les variations de température et de pression influencent davantage la masse volumique d'un gaz que celle d'un liquide. Dans les conditions normales de température et de pression, la masse volumique d'un certain gaz vaut 1,50 g/L. Quelle valeur prendrait la masse volumique si on maintenait la pression constante mais qu'on amenait la température à 410 K?",
-            answers: ["A. 1,00 g/L", "B. 1,09 g/L", "C. 1,50 g/L", "D. 2,25 g/L"],
-            correctAnswer: 0,
-            selectedAnswer: null,
-            lien : "https://www.youtube.com/watch?v=E_AQ5s8-_ys",
+    {
+        questionParts: [
+            {
+                type: "text",
+                content: "La formule "
+            },
+            {
+                type: "katex",
+                content: "a+b^2"
+            },
+            {
+                type: "text",
+                content: " est un polynôme du second degré."
+            }
+        ],
+        answers: ["A. 1,00 mL", "B. 2,00 mL", "C. 4,00 mL", "D. 40,0 mL"],
+        correctAnswer: 2,
+        selectedAnswer: null,
+        lien: "https://www.youtube.com/watch?v=Wi3ces6kV1Y",
+    },
+    {
+        questionParts: [
+            {
+                type: "text",
+                content: "Question 2. Considérons le mélange d'acétone (C3H6O) et de disulfure de carbone (CS2) suivant: Quelle est la proposition correcte?"
+            }
+        ],
+        answers: ["A. La fraction molaire de l'acétone est de 0,40", "B. La fraction molaire du disulfure de carbone est de 0,40", "C. La fraction molaire de l'acétone est de 0,67", "D. La fraction molaire du disulfure de carbone est de 0,80"],
+        correctAnswer: 0,
+        selectedAnswer: null,
+        lien: "https://www.youtube.com/watch?v=KyzbEmao6vw",
+    },
+    {
+        questionParts: [
+            {
+                type: "text",
+                content: "Question 3. Les variations de température et de pression influencent davantage la masse volumique d'un gaz que celle d'un liquide. Dans les conditions normales de température et de pression, la masse volumique d'un certain gaz vaut 1,50 g/L. Quelle valeur prendrait la masse volumique si on maintenait la pression constante mais qu'on amenait la température à 410 K?"
+            }
+        ],
+        answers: ["A. 1,00 g/L", "B. 1,09 g/L", "C. 1,50 g/L", "D. 2,25 g/L"],
+        correctAnswer: 0,
+        selectedAnswer: null,
+        lien: "https://www.youtube.com/watch?v=E_AQ5s8-_ys",
+    },
+    {
+        questionParts: [
+            {
+                type: "text",
+                content: "Question 4. A quel oxyde acide correspond le permanganate d'hydrogène ?"
+            }
+        ],
+        answers: ["A. MnO2", "B. MnO4", "C. Mn2O5", "D. Mn2O7"],
+        correctAnswer: 3,
+        selectedAnswer: null,
+        lien: "https://www.youtube.com/watch?v=EPn85_odwVc",
+    },
+    {
+        questionParts: [
+            {
+                type: "text",
+                content: "Question 5. Parmi les paires de composés ci-dessous, laquelle ne correspond pas à un couple acide/base conjuguée ?"
+            }
+        ],
+        answers: ["A. HCIO/CIO-", "B. H3O+/OH-", "C. H2PO4-/HPO4(2+)", "D. HOOC-CH2-NH3(+) / OOC-CH2-NH3+"],
+        correctAnswer: 1,
+        selectedAnswer: null,
+        lien: "https://www.youtube.com/watch?v=B4MRJPdzt00",
+    },
+    {
+        questionParts: [
+            {
+                type: "text",
+                content: "Question 6. Le mélange de phosphate de sodium et de bromure de strontium en phase aqueuse conduit à la formation de phosphate de strontium et de bromure de sodium. Si on pondère correctement l'équation chimique de cette réaction avec des nombres entiers les plus petits possibles, que vaut la somme de tous les coefficients stœchiométriques?"
+            }
+        ],
+        answers: ["A. 4", "B. 5", "C. 8", "D. 12"],
+        correctAnswer: 3,
+        selectedAnswer: null,
+        lien: "https://www.youtube.com/watch?v=8xk9kpzAAek",
+    },
+    {
+        questionParts: [
+            {
+                type: "text",
+                content: "Question 7. La combustion complète du propane en présence de dioxygène produit du dioxyde de carbone et de l'eau. Si 88,0 g de propane et 16,0 g de dioxygène sont mélangés, quel volume de dioxyde de carbone est produit à 0°C sous une pression de 1 atm?"
+            }
+        ],
+        answers: ["A. 6,72 L", "B. 18,7 L", "C. 33,6 L", "D. 134 L"],
+        correctAnswer: 0,
+        selectedAnswer: null,
+        lien: "https://www.youtube.com/watch?v=y5fzMeFWQ9o",
+    },
+    {
+        questionParts: [
+            {
+                type: "text",
+                content: "Question 8. Du chlorure de zinc est converti en zinc métallique par réaction avec de l'aluminium selon la réaction dont l'équation chimique est : 3 ZnCl2 (aq) + 2 Al (s) → 3 Zn (s) + 2 AICI3 (aq) Au terme de cette réaction, 3,25 g de zinc métallique sont obtenus après mélange de 200 mL d'une solution aqueuse 0,500 mol/L en chlorure de zinc et de 2,70 g d'aluminium. Quel est le rendement de la réaction?"
+            }
+        ],
+        answers: ["A. 5,00 %", "B. 33,3%", "C. 50,0%", "D. 66,6%"],
+        correctAnswer: 2,
+        selectedAnswer: null,
+        lien: "https://www.youtube.com/watch?v=BETiLB19K-4",
+    },
+    {
+        questionParts: [
+            {
+                type: "text",
+                content: "Question 9. Soit la réaction dont l'équation chimique est : N2 (g) +3 H2 (g) = 2 NH3 (g) Dans un réacteur de 250 mL à 25°C sont introduits 0,350 mol de diazote et 1,00 mol de dihydrogène. Sachant que 0,500 mol d'ammoniac est obtenu à l'équilibre, quelle est la valeur de la constante d'équilibre Kc de cette réaction à 25°C?"
+            }
+        ],
+        answers: ["A. 5,00", "B. 10,0", "C. 80,0", "D. 160"],
+        correctAnswer: 2,
+        selectedAnswer: null,
+        lien: "https://www.youtube.com/watch?v=2b5WDH4cKE4",
+    },
+];
 
-        },
-        {
-            question: "Question 4. A quel oxyde acide correspond le permanganate d'hydrogène ?",
-            answers: ["A. MnO2", "B. MnO4", "C. Mn2O5", "D. Mn2O7"],
-            correctAnswer: 3,
-            selectedAnswer: null,
-            lien : "https://www.youtube.com/watch?v=EPn85_odwVc",
-
-        },
-        {
-            question: "Question 5 Parmi les paires de composés ci-dessous, laquelle ne correspond pas à un couple acide/base conjuguée ?",
-            answers: ["A. HCIO/CIO-", "B. H3O+/OH-", "C. H2PO4-/HPO4(2+)", "D. HOOC-CH2-NH3(+) / OOC-CH2-NH3+"],
-            correctAnswer: 1,
-            selectedAnswer: null,
-            lien : "https://www.youtube.com/watch?v=B4MRJPdzt00",
-        },
-        {
-            question: "Question 6. Le mélange de phosphate de sodium et de bromure de strontium en phase aqueuse conduit à la formation de phosphate de strontium et de bromure de sodium. Si on pondère correctement l'équation chimique de cette réaction avec des nombres entiers les plus petits possibles, que vaut la somme de tous les coefficients stœchiométriques?",
-            answers: ["A. 4", "B. 5", "C. 8", "D. 12"],
-            correctAnswer: 3,
-            selectedAnswer: null,
-            lien : "https://www.youtube.com/watch?v=8xk9kpzAAek",
-        },
-        {
-            question: "Question 7. La combustion complète du propane en présence de dioxygène produit du dioxyde de carbone et de l'eau. Si 88,0 g de propane et 16,0 g de dioxygène sont mélangés, quel volume de dioxyde de carbone est produit à 0°C sous une pression de 1 atm?",
-            answers: ["A. 6,72 L", "B. 18,7 L", "C. 33,6 L", "D. 134 L"],
-            correctAnswer: 0,
-            selectedAnswer: null,
-            lien : "https://www.youtube.com/watch?v=y5fzMeFWQ9o",
-
-        },
-        {
-            question: "Question 8 Du chlorure de zinc est converti en zinc métallique par réaction avec de l'aluminium selon la réaction dont l'équation chimique est : 3 ZnCl2 (aq) + 2 Al (s) → 3 Zn (s) + 2 AICI3 (aq) Au terme de cette réaction, 3,25 g de zinc métallique sont obtenus après mélange de 200 mL d'une solution aqueuse 0,500 mol/L en chlorure de zinc et de 2,70 g d'aluminium. Quel est le rendement de la réaction?",
-            answers: ["A. 5,00 %", "B. 33,3%", "C. 50,0%", "D. 66,6%"],
-            correctAnswer: 2,
-            selectedAnswer: null,
-            lien : "https://www.youtube.com/watch?v=BETiLB19K-4",
-        },
-        {
-            question: "Question 9. Soit la réaction dont l'équation chimique est : N2 (g) +3 H2 (g) = 2 NH3 (g) Dans un réacteur de 250 mL à 25°C sont introduits 0,350 mol de diazote et 1,00 mol de dihydrogène. Sachant que 0,500 mol d'ammoniac est obtenu à l'équilibre, quelle est la valeur de la constante d'équilibre Kc de cette réaction à 25°C?",
-            answers: ["A. 5,00", "B. 10,0", "C. 80,0", "D. 160"],
-            correctAnswer: 2,
-            selectedAnswer: null,
-            lien : "https://www.youtube.com/watch?v=2b5WDH4cKE4",
-        },
-    ];
 
     
     function selectAnswer(answerIndex) {
@@ -145,6 +194,21 @@
 <h1 class="title">CHIMIE 2023</h1>
 
 
+<h1 class="question">
+    {#each questions[currentQuestion].questionParts as part}
+        {#if part.type === 'text'}
+            {part.content}
+        {:else if part.type === 'katex'}
+            <Katex>{part.content}</Katex>
+        {/if}
+    {/each}
+</h1>
+
+
+
+
+
+
 <div  class="image-link" on:click={handleImageClick}>
     <img src="/./ampoule.png" alt="gay">
 </div>
@@ -153,6 +217,9 @@
     <div class="center-content">
 
     {#if currentQuestion < questions.length}
+
+
+
         <h1 class="question"><Katex>{questions[currentQuestion].question}</Katex></h1>
         {#if currentQuestion === 1} <!-- Ajouter cette condition pour afficher l'image uniquement pour la question 2 -->
             <div class="question-image">
@@ -263,7 +330,7 @@
     }
 
     .question {
-    margin-top: -300px; /* Ajustez la marge supérieure selon vos préférences */
+    margin-top: -100px; /* Ajustez la marge supérieure selon vos préférences */
 }
 
 </style>
