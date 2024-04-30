@@ -28,7 +28,7 @@
 
 </script>
 
-<h2>Student's favorite HUB</h2>
+<h2>Student's favorite HUB</h2>  
 
 <form on:submit|preventDefault={login}>
     <div>

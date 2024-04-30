@@ -4,7 +4,9 @@
     let tests = [
         { title: "chimie2023", score: null, status: null, progress: 0 },
         { title: "math2023", score: null, status: null, progress: 0 },
-        { title: "physique2023", score: null, status: null, progress: 0}
+        { title: "physique2023", score: null, status: null, progress: 0},
+        { title: "bio2023", score: null, status: null, progress: 0}
+
     ];
 </script>
 
