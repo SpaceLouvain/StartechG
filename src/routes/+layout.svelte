@@ -9,7 +9,7 @@
     { text: 'PROGRESSION', logo: 'roadmap.png', href: '/progression' },
     { text: 'COMMUNAUTE', logo: 'team.png', href: '/forum' },
     { text: 'COACH', logo: 'teachers-day.png', href: '/coach' },
-    { text: 'PARAMETRES', logo: 'parametres.avif', href: '/parametres' },
+    //{ text: 'PARAMETRES', logo: 'parametres.avif', href: '/parametres' },
   ];
   let message = '';
   let messages = [];
@@ -67,12 +67,15 @@
     justify-content: center;
     padding: 20px;
     background-color: #f8f8f8;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
   }
 
   .chatbox {
     position: fixed;
     right: 20px;
-    bottom: 20px;
+    bottom: 240px;
     width: 300px;
     height: 200px;
     background-color: #f8f8f8;
@@ -163,13 +166,18 @@
 
 <footer>
   <p>"Slogan du jour : 'Le succès n'est pas final, l'échec n'est pas fatal : c'est le courage de continuer qui compte.' - Winston Churchill"</p>
+  <br>
   <p>© EduHub Formation</p>
 </footer>
 
 <div class="chatbox">
-  <div class="chatbox-header" role="button" tabindex="0" on:click={expandChatbox} on:keydown={handleKeyDown}>
+  <div class="chatbox-header" role="button" tabindex="0" on:click={toggleChatbox} on:keydown={handleKeyDown}>
     <span>Chat</span>
-    <button class="shrink-button" on:click|stopPropagation={shrinkChatbox}>-</button>
+    {#if expanded}
+      <button class="shrink-button" on:click|stopPropagation={shrinkChatbox}>-</button>
+    {:else}
+      <button class="expand-button" on:click|stopPropagation={expandChatbox}>+</button>
+    {/if}
   </div>
   <div class="chatbox-content">
     {#each messages as msg (msg.text)}

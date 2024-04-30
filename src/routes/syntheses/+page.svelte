@@ -1,6 +1,6 @@
 <script>
   let message = "Nous n'avons pas encore de synthèse à proposer. C'est pour bientôt !";
-  let isLoading = true;
+  let isLoading = false;
 
   // Simulate an API call to fetch the synthesis data
   setTimeout(() => {

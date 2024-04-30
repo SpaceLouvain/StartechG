@@ -42,7 +42,7 @@
             <p>Wrong username/password</p>
         </div>
     {/if}
-    <form action="" method="post">
+    <form action="/login?/verify" method="POST">
         <label for="email">Email</label>
         <input type="email" name="email" id="email" /><br> <!-- Placer le champ email suivi d'un saut de ligne -->
         <label for="password">Password</label>

@@ -1,9 +1,12 @@
 <script>
     import { score } from '/src/routes/questions/store.js';
+    import Katex from 'svelte-katex'
 
+    let q = 'a+b^2'
     let questions = [
         {
-            question: "Question 1. Quel volume d'une solution aqueuse de sulfate d'hydrogène (50 % en masse, d = 0,980) faut-il prélever pour obtenir 200 mL d'une solution 0,100 mol/L en ce composé ?",
+            question: q,
+            /*question: "Question 1. Quel volume d'une solution aqueuse de sulfate d'hydrogène (50 % en masse, d = 0,980) faut-il prélever pour obtenir 200 mL d'une solution 0,100 mol/L en ce composé ?",*/
             answers: ["A. 1,00 mL", "B. 2,00 mL", "C. 4,00 mL", "D. 40,0 mL"],
             correctAnswer: 2,
             selectedAnswer: null,
@@ -150,7 +153,12 @@
     <div class="center-content">
 
     {#if currentQuestion < questions.length}
-        <h1 class="question">{questions[currentQuestion].question}</h1>
+        <h1 class="question"><Katex>{questions[currentQuestion].question}</Katex></h1>
+        {#if currentQuestion === 1} <!-- Ajouter cette condition pour afficher l'image uniquement pour la question 2 -->
+            <div class="question-image">
+                <img src="\.\chimq2.png" alt="Description de l'image">
+            </div>
+        {/if}
         <div class="answer-container">
             {#each questions[currentQuestion].answers as answer, index}
             <button 
@@ -193,8 +201,8 @@
     }
     .image-link {
     position: absolute;
-    right: 200px;
-    bottom: -100px;
+    right: 935px;
+    bottom: 150px;
     
     }
     .image-link img {
