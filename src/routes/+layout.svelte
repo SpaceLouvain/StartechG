@@ -1,4 +1,24 @@
 <script>
+  import { onMount, onDestroy } from 'svelte';
+  let width;
+
+  const resizeHandler = () => {
+    width = window.innerWidth;
+  };
+
+  onMount(() => {
+    if (typeof window !== 'undefined') {
+      width = window.innerWidth;
+      window.addEventListener('resize', resizeHandler);
+    }
+  });
+
+  onDestroy(() => {
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('resize', resizeHandler);
+    }
+  });
+
   import Title from '$lib/titre.svelte'
   import '../styles/global.css'
   let navItems = [
@@ -17,6 +37,7 @@
 
   function toggleChatbox() {
     expanded = !expanded;
+    
   }
   function expandChatbox() {
     expanded = true;
@@ -152,7 +173,32 @@
     color: #fff;
     text-decoration: none;
   }
+  /* Default styles for all sizes */
+  /* Default styles for all sizes */
+  body {
+    padding: 20px;
+    font-size: 16px;
+  }
+  
+  /* Styles for screens smaller than 600px */
+  @media (max-width: 600px) {
+    body {
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
+  
+  /* Styles for screens larger than 1200px */
+  @media (min-width: 1200px) {
+    body {
+      padding: 30px;
+      font-size: 18px;
+    }
+  }
 </style>
+
+
+<body>
 
 <header>
   <div>
@@ -198,3 +244,4 @@
     </div>
   {/each}
 </div>
+</body>

@@ -23,10 +23,8 @@ export const actions = {
 			email
 		});
 
-		if (!userId) {
+		if (userId === null || userId === undefined) {
 			throw redirect(302, '/errorPage');
-
-			
 		}
 
 		// set cookie
