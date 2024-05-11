@@ -18,8 +18,8 @@
         lien: "https://www.youtube.com/watch?v=eyl5a0HH--k",
     },
     {
-        question: "Question 3. Le graphique ci-dessous représente l'évolution de la vitesse d'une réaction enzymatique dans des conditions non limitantes.",
-        answers: ["A quel paramètre expérimental correspond l'abscisse?", "La concentration en enzyme.", "La concentration en substrat.", "La température.", "Le temps."],
+        question: "Question 3. Le graphique ci-dessous représente l'évolution de la vitesse d'une réaction enzymatique dans des conditions non limitantes. A quel paramètre expérimental correspond l'abscisse?",
+        answers: ["A. La concentration en enzyme.", "B. La concentration en substrat.", "C. La température.", "D. Le temps."],
         correctAnswer: 2,
         selectedAnswer: null,
         lien: "https://www.youtube.com/watch?v=8Z3iURS4xN0",
@@ -60,11 +60,12 @@
         lien: "https://www.youtube.com/watch?v=2lP6Jrgyj5A",
     },
     {
-        question: "Question 9. L'hémophilie A est une maladie monogénique causée par une déficience du facteur VIII de coagulation. L'arbre généalogique ci-dessous est celui d'une famille où sévit cette maladie. La technique du 'Southern Blot' permet de mettre en évidence des séquences spécifiques dans l'ADN génomique d'un sujet. Des généticiens ont utilisé cette technique pour quantifier le nombre de séquences correspondant à l'allèle sauvage et à l'allèle morbide dans l'ADN de quatre individus de la généalogie (Arthur, Chloé, Christian et Marie-France). Le tableau suivant donne le résultat de leurs analyses. A quel prénom correspond chaque lettre du tableau ?",
+        question: "",
         answers: ["A. A = Christian; B = Arthur; C = Marie-France; D = Chloé.", "B. A = Arthur; B = Christian; C = Marie-France; D = Chloé.", "C. A = Chloé; B = Marie-France; C = Christian; D = Arthur.", "D. A = Christian; B = Arthur; C = Chloé; D = Marie-France."],
         correctAnswer: 3,
         selectedAnswer: null,
         lien: "https://www.youtube.com/watch?v=X3LH0PGHvAk",
+        class: "question-9"
     },
     {
         question: "Question 10. L'utilisation abusive d'antibiotiques entraîne un accroissement de la fréquence des souches bactériennes qui y sont résistantes. Lequel des mécanismes suivants est à l'origine de cet accroissement ?",
@@ -169,11 +170,9 @@
             </div>
         {/if}
         {#if currentQuestion === 8} <!-- Afficher deux images pour la question 9 -->
+            <div class="q9"></div>
             <div class="imgq91">
-                <img src="\.\bioq9img1.png" alt="Description de l'image 1">
-            </div>
-            <div class="imgq92">
-                <img src="\.\bioq9img2.png" alt="Description de l'image 2">
+                <img src="\.\bioqq9.png" alt="Description de l'image 1">
             </div>
         {/if}
         <div class="answer-container">
@@ -284,18 +283,47 @@
     }
 
     .question {
+        font-size: 30px;
     margin-top: -300px; /* Ajustez la marge supérieure selon vos préférences */
 }
 
-.imgq3 img {
-        
-        width: 70%; /* or any other size */
-        left: 500px; /* center the image */
+    .imgq3 img {
+            
+            width: 70%; /* or any other size */
+            left: 500px; /* center the image */
+        }
+
+    .question-3 {
+        margin-top: 10px; /* Ajustez la marge supérieure selon vos préférences */
     }
 
-.question-3 {
-    margin-top: 10px; /* Ajustez la marge supérieure selon vos préférences */
+    .imgq7 {
+    display: flex; /* Use flexbox to center the image horizontally */
+    justify-content: center; /* Center the image horizontally */
+    margin-top: -5px; /* Add top margin for spacing */
 }
+
+.imgq7 img {
+    width: 50%; /* Set the width of the image */
+}
+
+
+
+
+.imgq91{
+    top: 90%; /* Positionnez les images au-dessous du conteneur parent */
+    left: 0%; /* Alignez les images sur la gauche */
+    width: 90%; /* Assurez-vous que chaque image occupe 50% de la largeur */
+    margin-top: 20px; /* Ajoutez une marge supérieure pour séparer les images du texte */
+}
+
+.imgq91 img {
+    display: flex; /* Utilisez flexbox pour aligner les images horizontalement */
+    justify-content: center; /* Alignez les images horizontalement */
+    margin-top: 200px; /* Ajoutez une marge supérieure pour séparer les images du texte */
+}
+
+
 
 
 </style>

@@ -7,21 +7,8 @@
         questionParts: [
             {
                 type: "text",
-                content: "La formule "
-            },
-            {
-                type: "katex",
-                content: "a+b^2"
-            },
-            {
-                type: "text",
-                content: " est un polynôme du second degré."
-            },
-            {
-                type:"katex",
-                content: "\\oint_{\\partial V} \\mathbf{E} \\cdot d\\mathbf{S} = \\frac{1}{\\epsilon_0} \\int_V \\rho(\\mathbf{r}) \\, dV"
+                content: "Question 1. Quel volume d'une solution aqueuse de sulfate d'hydrogène (50 % en masse, d = 0,980) faut-il prélever pour obtenir 200 mL d'une solution 0,100 mol/L en ce composé ?"
             }
-            
         ],
         answers: ["A. 1,00 mL", "B. 2,00 mL", "C. 4,00 mL", "D. 40,0 mL"],
         correctAnswer: 2,
@@ -29,10 +16,27 @@
         lien: "https://www.youtube.com/watch?v=Wi3ces6kV1Y",
     },
     {
-        questionParts: [
+            questionParts: [
             {
                 type: "text",
-                content: "Question 2. Considérons le mélange d'acétone (C3H6O) et de disulfure de carbone (CS2) suivant: Quelle est la proposition correcte?"
+                content: "Question 2. Considérons le mélange d'acétone "
+            },
+
+            {
+                type: "katex",
+                content: "C_3H_6O"
+            },
+            {
+                type: "text",
+                content: " et de disulfure de carbone "
+            },
+            {
+                type: "katex",
+                content: "CS_2"
+            },
+            {
+                type: "text",
+                content: "suivant: Quelle est la proposition correcte ?"
             }
         ],
         answers: ["A. La fraction molaire de l'acétone est de 0,40", "B. La fraction molaire du disulfure de carbone est de 0,40", "C. La fraction molaire de l'acétone est de 0,67", "D. La fraction molaire du disulfure de carbone est de 0,80"],
@@ -59,7 +63,13 @@
                 content: "Question 4. A quel oxyde acide correspond le permanganate d'hydrogène ?"
             }
         ],
-        answers: ["A. MnO2", "B. MnO4", "C. Mn2O5", "D. Mn2O7"],
+        answers: [
+    { type: 'katex', content: 'A. \\text{ MnO}_2' },
+    { type: 'katex', content: 'B. \\text{ MnO}_4' },
+    { type: 'katex', content: 'C. \\text{ Mn}_2\\text{O}_5' },
+    { type: 'katex', content: 'D. \\text{ Mn}_2\\text{O}_7' }
+],
+
         correctAnswer: 3,
         selectedAnswer: null,
         lien: "https://www.youtube.com/watch?v=EPn85_odwVc",
@@ -71,7 +81,12 @@
                 content: "Question 5. Parmi les paires de composés ci-dessous, laquelle ne correspond pas à un couple acide/base conjuguée ?"
             }
         ],
-        answers: ["A. HCIO/CIO-", "B. H3O+/OH-", "C. H2PO4-/HPO4(2+)", "D. HOOC-CH2-NH3(+) / OOC-CH2-NH3+"],
+        answers: [
+        { type: 'katex', content: 'A. \\text{HClO}/\\text{ClO}^{-}' },
+        { type: 'katex', content: 'B. \\text{H}_3\\text{O}^+/\\text{OH}^{-}' },
+        { type: 'katex', content: 'C. \\text{H}_2\\text{PO}_4^-/\\text{HPO}_4^{2-}' },
+        { type: 'katex', content: 'D. \\text{HOOC-CH}_2\\text{NH}_3^+/\\text{OOC-CH}_2\\text{NH}_3^+' }
+    ],
         correctAnswer: 1,
         selectedAnswer: null,
         lien: "https://www.youtube.com/watch?v=B4MRJPdzt00",
@@ -102,11 +117,20 @@
     },
     {
         questionParts: [
-            {
-                type: "text",
-                content: "Question 8. Du chlorure de zinc est converti en zinc métallique par réaction avec de l'aluminium selon la réaction dont l'équation chimique est : 3 ZnCl2 (aq) + 2 Al (s) → 3 Zn (s) + 2 AICI3 (aq) Au terme de cette réaction, 3,25 g de zinc métallique sont obtenus après mélange de 200 mL d'une solution aqueuse 0,500 mol/L en chlorure de zinc et de 2,70 g d'aluminium. Quel est le rendement de la réaction?"
-            }
-        ],
+    {
+        type: "text",
+        content: "Question 8. Du chlorure de zinc est converti en zinc métallique par réaction avec de l'aluminium selon la réaction dont l'équation chimique est : "
+    },
+    {
+        type: "katex",
+        content: "3 ZnCl_2 (aq) + 2 Al (s) \\rightarrow 3 Zn (s) + 2 AlCl_3 (aq)"
+    },
+    {
+        type: "text",
+        content: " Au terme de cette réaction, 3,25 g de zinc métallique sont obtenus après mélange de 200 mL d'une solution aqueuse 0,500 mol/L en chlorure de zinc et de 2,70 g d'aluminium. Quel est le rendement de la réaction?"
+    }
+],
+
         answers: ["A. 5,00 %", "B. 33,3%", "C. 50,0%", "D. 66,6%"],
         correctAnswer: 2,
         selectedAnswer: null,
@@ -114,11 +138,20 @@
     },
     {
         questionParts: [
-            {
-                type: "text",
-                content: "Question 9. Soit la réaction dont l'équation chimique est : N2 (g) +3 H2 (g) = 2 NH3 (g) Dans un réacteur de 250 mL à 25°C sont introduits 0,350 mol de diazote et 1,00 mol de dihydrogène. Sachant que 0,500 mol d'ammoniac est obtenu à l'équilibre, quelle est la valeur de la constante d'équilibre Kc de cette réaction à 25°C?"
-            }
-        ],
+    {
+        type: "text",
+        content: "Question 9. Soit la réaction dont l'équation chimique est :"
+    },
+    {
+        type: "katex",
+        content: "N_2 (g) + 3 H_2 (g) \\rightleftharpoons 2 NH_3 (g)"
+    },
+    {
+        type: "text",
+        content: "Dans un réacteur de 250 mL à 25°C sont introduits 0,350 mol de diazote et 1,00 mol de dihydrogène. Sachant que 0,500 mol d'ammoniac est obtenu à l'équilibre, quelle est la valeur de la constante d'équilibre Kc de cette réaction à 25°C?"
+    }
+],
+
         answers: ["A. 5,00", "B. 10,0", "C. 80,0", "D. 160"],
         correctAnswer: 2,
         selectedAnswer: null,
@@ -214,7 +247,7 @@
 
 
 
-<div  class="image-link" on:click={handleImageClick}>
+<div  class="ampoule" on:click={handleImageClick}>
     <img src="/./ampoule.png" alt="gay">
 </div>
 
@@ -226,7 +259,7 @@
 
 
         {#if currentQuestion === 1} <!-- Ajouter cette condition pour afficher l'image uniquement pour la question 2 -->
-            <div class="question-image">
+            <div class="image_q2">
                 <img src="\.\chimq2.png" alt="Description de l'image">
             </div>
         {/if}
@@ -234,16 +267,21 @@
 
         <div class="answer-container">
             {#each questions[currentQuestion].answers as answer, index}
-            <button 
-            class="answer-button 
-                {questions[currentQuestion].selectedAnswer !== null && index === questions[currentQuestion].correctAnswer ? 'correct' : ''}
-                {questions[currentQuestion].selectedAnswer === index && index !== questions[currentQuestion].correctAnswer ? 'incorrect' : ''}"
-            on:click={() => handleAnswerClick(index)}
-        >
-            {answer}
-        </button>
-{/each}
+                <button 
+                    class="answer-button 
+                        {questions[currentQuestion].selectedAnswer !== null && index === questions[currentQuestion].correctAnswer ? 'correct' : ''}
+                        {questions[currentQuestion].selectedAnswer === index && index !== questions[currentQuestion].correctAnswer ? 'incorrect' : ''}"
+                    on:click={() => handleAnswerClick(index)}
+                >
+                    {#if typeof answer === 'string'}
+                        {answer}
+                    {:else}
+                        <Katex>{answer.content}</Katex>
+                    {/if}
+                </button>
+            {/each}
         </div>
+        
             
 {#if showVideo}
 <iframe width="560" height="315" src="{currentVideoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -272,13 +310,13 @@
         justify-content: center;
         height: 100vh; /* adjust as needed */
     }
-    .image-link {
+    .ampoule {
     position: absolute;
     right: 935px;
     bottom: 150px;
     
     }
-    .image-link img {
+    .ampoule img {
         width: 50px;
         height: 50px;
     }
@@ -338,6 +376,13 @@
 
     .question {
     margin-top: 30px; /* Ajustez la marge supérieure selon vos préférences */
+    font-size: 30px; /* Ajustez la taille de la police selon vos préférences */
+
 }
+
+    .image_q2 {
+        margin-top: 200px;
+        justify-content: center;
+    }
 
 </style>
