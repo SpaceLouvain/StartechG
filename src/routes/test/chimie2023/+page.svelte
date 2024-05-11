@@ -312,7 +312,7 @@
     }
     .ampoule {
     position: absolute;
-    right: 935px;
+    right: 150px;
     bottom: 150px;
     
     }
@@ -325,7 +325,7 @@
         display: flex;
         flex-direction: column;
         align-items: start;
-        margin-bottom: 600px;
+        margin-top: -250px; /* adjust as needed */
     }
     .answer {
         border: 1px solid black;
@@ -380,8 +380,9 @@
 
 }
 
-    .image_q2 {
-        margin-top: 200px;
+    .image_q2 img{
+        margin-top: -510px;
+        width: 80%;
         justify-content: center;
     }
 
