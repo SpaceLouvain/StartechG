@@ -40,8 +40,8 @@
     }
   }
   const timestamp = new Date().toLocaleTimeString(); // get the current time
-  messages.push({ text: 'Salut!', type: 'incoming', timestamp, sender: 'Coach Antoine' });
-  messages.push({ text: 'Comment puis je t aider feur', type: 'incoming', timestamp, sender:'Coach Antoine' });
+  messages.push({ text: 'Bonjour, je suis ton coach virtuel.', type: 'incoming', timestamp, sender: 'Coach AI' });
+  messages.push({ text: "Comment puis je t'aider aujourd'hui ?", type: 'incoming', timestamp, sender:'Coach AI' });
 </script>
 
 <style>
@@ -98,7 +98,7 @@
     justify-content: space-between;
     height: 50px;
     padding: 0 10px;
-    background-color: rgb(255, 1, 213);
+    background-color: #08086652;
     cursor: pointer;
   }
 
@@ -133,7 +133,7 @@
     left: 0;
     top: 0;
     bottom: 0;
-    width: 160px;
+    width: 200px;
     overflow: auto;
     padding: 20px;
     background-color: #0b0ba052;
@@ -153,10 +153,41 @@
     color: #fff;
     text-decoration: none;
   }
-  /* Default styles for all sizes */
-  /* Default styles for all sizes */
 
+  footer p {
+    margin: 10px 0;
+  }
 
+  .chatbox-header span {
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .chatbox-content button {
+    background-color: #08086652;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .chatbox-content button:hover {
+    background-color: #080866;
+  }
+
+  .chatbox-content input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .left-column {
+    color: #fff;
+  }
+
+  .left-column a:hover {
+    text-decoration: underline;
+  }
 </style>
 
 
@@ -173,7 +204,7 @@
 
 <footer>
   <p>"Slogan du jour : 'Le succès n'est pas final, l'échec n'est pas fatal : c'est le courage de continuer qui compte.' - Winston Churchill"</p>
-  <br>
+  <p>&nbsp;</p>
   <p>© EduHub Formation</p>
 </footer>
 
