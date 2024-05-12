@@ -1,10 +1,10 @@
 <script>
-    import { score, status } from './store.js';
+    import { score, score1, score2, status1, status2, status } from './store.js';
 
     let tests = [
-        { title: "chimie2023", score: null, status: null, progress: 0 },
-        { title: "math2023", score: null, status: null, progress: 0 },
-        { title: "bio2023", score: null, status: null, progress: 0}
+        { title: "chimie2023", score:   $score1, status: $status1, progress: 0 },
+        { title: "math2023", score: $score2, status: $status2, progress: 0 },
+        { title: "bio2023", score: $score, status: $status, progress: 0}
     ];
 
 let showButton = true;
@@ -113,11 +113,11 @@ function handleClick() {
         {#each tests as test (test.title)}
             <tr class={$status.toLowerCase().replace(" ", "-")}>
                 <td><a href={`/test/${test.title}`}>{test.title}</a></td>                
-                <td>{$status}</td>
+                <td>{test.status}</td>
                 <td>
                     <div class="progress-container">
-                        <progress id="{test.title}-progress" value={$score / 10 * 100} max="100"></progress>
-                        <span>{Math.round($score / 10 * 100)}%</span>
+                        <progress id="{test.title}-progress" value={test.score / 10 * 100} max="100"></progress>
+                        <span>{Math.round(test.score / 10 * 100)}%</span>
                     </div>
                 </td>
             </tr>

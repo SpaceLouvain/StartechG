@@ -42,6 +42,7 @@ export async function verifyUser(username, password) {
 
     // If user doesn't exist
     if (!user) {
+		
         return false;
     }
 
