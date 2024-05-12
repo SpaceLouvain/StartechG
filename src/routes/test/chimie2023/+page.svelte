@@ -16,12 +16,7 @@
             {
                 type: "text",
                 content: " est un polynôme du second degré."
-            },
-            {
-                type:"katex",
-                content: "\\oint_{\\partial V} \\mathbf{E} \\cdot d\\mathbf{S} = \\frac{1}{\\epsilon_0} \\int_V \\rho(\\mathbf{r}) \\, dV"
             }
-            
         ],
         answers: ["A. 1,00 mL", "B. 2,00 mL", "C. 4,00 mL", "D. 40,0 mL"],
         correctAnswer: 2,
@@ -216,7 +211,7 @@
 
 
 
-<div  class="image-link" on:click={handleImageClick}>
+<div  class="ampoule" on:click={handleImageClick}>
     <img src="/./ampoule.png" alt="gay">
 </div>
 
@@ -267,6 +262,16 @@
 </main>
 {/if}
 <style>
+    .ampoule {
+    position: fixed;
+    right: 120px;
+    bottom: 130px;
+    
+    }
+    .ampoule img {
+        width: 50px;
+        height: 50px;
+    }
     .center-content {
         display: flex;
         flex-direction: column;
@@ -285,11 +290,11 @@
         height: 50px;
     }
 
-        .answer-container {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        margin-bottom: 600px;
+    .answer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 600px;
     }
     .answer {
         border: 1px solid black;

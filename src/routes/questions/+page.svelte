@@ -10,7 +10,7 @@
 let showButton = true;
 
 function handleClick() {
-    showButton = false;
+    showButton = true;
 }
 </script>
 

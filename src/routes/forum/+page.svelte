@@ -1,10 +1,20 @@
-<a href="https://discord.gg/UDkW5Bbm">
-    <button class="primary-button" on:click={handleClick}>
-        <div class="button-content">
-            rejoindre le discord
-        </div>
-    </button>
-</a>
+<script>
+let showButton = true;
+
+function handleClick() {
+    showButton = true;
+}
+</script>
+
+{#if showButton}
+    <a href="https://discord.gg/UDkW5Bbm">
+        <button class="primary-button" on:click={handleClick}>
+            <div class="button-content">
+                rejoindre le discord
+            </div>
+        </button>
+    </a>
+{/if}
 
 <style>
     .primary-button {

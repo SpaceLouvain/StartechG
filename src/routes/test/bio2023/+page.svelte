@@ -75,10 +75,7 @@
         lien: "https://www.youtube.com/watch?v=X3LH0PGHvAk",
     },
 ];
-
-
-
-    
+  
     function selectAnswer(answerIndex) {
         questions[currentQuestion].selectedAnswer = answerIndex;
         if (answerIndex === questions[currentQuestion].correctAnswer) {
@@ -235,15 +232,15 @@
     flex-direction: column;
     align-items: start;
     margin-bottom: 20px; /* Add margin bottom for spacing */
-}
+    }
 
-/* Add styles for the video */
-iframe {
-    width: 100%; /* Adjust the width as needed */
-    height: 400px; /* Adjust the height as needed */
-    margin-top: -50px; /* Move the video higher on the page */
-    margin-bottom: 20px; /* Add margin bottom for spacing */
-}
+    /* Add styles for the video */
+    iframe {
+        width: 100%; /* Adjust the width as needed */
+        height: 400px; /* Adjust the height as needed */
+        margin-top: -50px; /* Move the video higher on the page */
+        margin-bottom: 20px; /* Add margin bottom for spacing */
+    }
 
     .answer {
         border: 1px solid black;
@@ -295,7 +292,7 @@ iframe {
     .question {
         font-size: 30px;
     margin-top: -300px; /* Ajustez la marge supérieure selon vos préférences */
-}
+    }
 
     .imgq3 img {
             
@@ -311,29 +308,22 @@ iframe {
     display: flex; /* Use flexbox to center the image horizontally */
     justify-content: center; /* Center the image horizontally */
     margin-top: -5px; /* Add top margin for spacing */
-}
+    }
 
-.imgq7 img {
-    width: 50%; /* Set the width of the image */
-}
+    .imgq7 img {
+        width: 50%; /* Set the width of the image */
+    }
 
+    .imgq91{
+        top: 90%; /* Positionnez les images au-dessous du conteneur parent */
+        left: 0%; /* Alignez les images sur la gauche */
+        width: 90%; /* Assurez-vous que chaque image occupe 50% de la largeur */
+        margin-top: 20px; /* Ajoutez une marge supérieure pour séparer les images du texte */
+    }
 
-
-
-.imgq91{
-    top: 90%; /* Positionnez les images au-dessous du conteneur parent */
-    left: 0%; /* Alignez les images sur la gauche */
-    width: 90%; /* Assurez-vous que chaque image occupe 50% de la largeur */
-    margin-top: 20px; /* Ajoutez une marge supérieure pour séparer les images du texte */
-}
-
-.imgq91 img {
-    display: flex; /* Utilisez flexbox pour aligner les images horizontalement */
-    justify-content: center; /* Alignez les images horizontalement */
-    margin-top: 200px; /* Ajoutez une marge supérieure pour séparer les images du texte */
-}
-
-
-
-
+    .imgq91 img {
+        display: flex; /* Utilisez flexbox pour aligner les images horizontalement */
+        justify-content: center; /* Alignez les images horizontalement */
+        margin-top: 200px; /* Ajoutez une marge supérieure pour séparer les images du texte */
+    }
 </style>
