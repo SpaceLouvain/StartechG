@@ -418,14 +418,13 @@
     }
     .ampoule {
     position: absolute;
-    right: 150px;
-    bottom: 150px;
+    right: 120px;
+    bottom: 130px;
     
     }
     .ampoule img {
         width: 50px;
         height: 50px;
-        margin-bottom: 100px;
     }
 
     .answer-container {
@@ -460,7 +459,7 @@
     }
     .fleche_next {
         position: absolute;
-        right: 300px;
+        right: 250px;
         bottom: 100px;
     }
     .fleche_next img{

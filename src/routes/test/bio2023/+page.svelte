@@ -220,9 +220,9 @@
         height: 100vh; /* adjust as needed */
     }
     .ampoule {
-    position: absolute;
-    right: 150px;
-    bottom: 150px;
+    position: fixed;
+    right: 120px;
+    bottom: 130px;
     
     }
     .ampoule img {
@@ -268,8 +268,8 @@ iframe {
         text-align: center;
     }
     .fleche_next {
-        position: absolute;
-        right: 300px;
+        position: fixed;
+        right: 250px;
         bottom: 100px;
     }
     .fleche_next img{
@@ -278,7 +278,7 @@ iframe {
     }
 
     .fleche_previous {
-        position: absolute;
+        position: fixed;
         left: 300px;
         bottom: 100px;
         transform: rotate(180deg);

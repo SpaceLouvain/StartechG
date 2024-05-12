@@ -17,14 +17,6 @@
 
   function toggleChatbox() {
     expanded = !expanded;
-    
-  }
-  function expandChatbox() {
-    expanded = true;
-  }
-
-  function shrinkChatbox() {
-    expanded = false;
   }
 
   function sendMessage() {
@@ -34,14 +26,16 @@
       message = '';
     }
   }
+
   function handleKeyDown(event) {
     if (event.key === 'Enter') {
-      expandChatbox();
+      toggleChatbox();
     }
   }
+
   const timestamp = new Date().toLocaleTimeString(); // get the current time
   messages.push({ text: 'Bonjour, je suis ton coach virtuel.', type: 'incoming', timestamp, sender: 'Coach AI' });
-  messages.push({ text: "Comment puis je t'aider aujourd'hui ?", type: 'incoming', timestamp, sender:'Coach AI' });
+  messages.push({ text: "Comment puis-je t'aider aujourd'hui ?", type: 'incoming', timestamp, sender:'Coach AI' });
 </script>
 
 <style>
@@ -52,6 +46,10 @@
   }
 
   header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: center;
     padding: 20px;
@@ -60,7 +58,7 @@
 
   main {
     max-width: 960px;
-    margin: 20px auto;
+    margin: 150px auto 20px;
   }
 
   footer {
@@ -75,10 +73,10 @@
 
   .chatbox {
     position: fixed;
-    right: 20px;
-    bottom: 240px;
-    width: 300px;
-    height: 200px;
+    right: 15px;
+    top: 140px;
+    width: 400px;
+    height: 50px;
     background-color: #f8f8f8;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -88,8 +86,8 @@
   }
 
   .chatbox.expanded {
-    width: 100%;
-    height: 100%;
+    width: 400px;
+    height: 550px;
   }
 
   .chatbox-header {
@@ -107,6 +105,34 @@
     color: #fff;
     border: none;
     cursor: pointer;
+  }
+
+  .shrink-button,
+  .expand-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .shrink-button {
+    background-color: #0505506a;
+    color: #fff;
+  }
+
+  .expand-button {
+    background-color: #0b0ba052;
+    color: #fff;
+  }
+
+  .shrink-button:hover,
+  .expand-button:hover {
+    background-color: #333;
   }
 
   .chatbox-content {
@@ -137,6 +163,7 @@
     overflow: auto;
     padding: 20px;
     background-color: #0b0ba052;
+    color: #fff;
   }
 
   .nav-item {
@@ -181,16 +208,10 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   }
 
-  .left-column {
-    color: #fff;
-  }
-
   .left-column a:hover {
     text-decoration: underline;
   }
 </style>
-
-
 
 <header>
   <div>
@@ -208,13 +229,22 @@
   <p>© EduHub Formation</p>
 </footer>
 
-<div class="chatbox">
+<div class="left-column">
+  {#each navItems as item (item.text)}
+    <div class="nav-item">
+      <img src={item.logo} alt="Logo" width="24" height="24">
+      <a href={item.href}>{item.text}</a>
+    </div>
+  {/each}
+</div>
+
+<div class="chatbox" class:expanded>
   <div class="chatbox-header" role="button" tabindex="0" on:click={toggleChatbox} on:keydown={handleKeyDown}>
-    <span>Chat</span>
+    <span>{#if expanded}Chat{:else}Chat{/if}</span>
     {#if expanded}
-      <button class="shrink-button" on:click|stopPropagation={shrinkChatbox}>-</button>
+      <button class="shrink-button" on:click|stopPropagation={toggleChatbox}>-</button>
     {:else}
-      <button class="expand-button" on:click|stopPropagation={expandChatbox}>+</button>
+      <button class="expand-button" on:click|stopPropagation={toggleChatbox}>+</button>
     {/if}
   </div>
   <div class="chatbox-content">
@@ -223,16 +253,7 @@
         <span class="timestamp">{msg.timestamp}</span> <span class="sender">{msg.sender}:</span> {msg.text}
       </p>
     {/each}
-    <input type="text" bind:value={message} placeholder="Type a message...">
+    <input type="text" bind:value={message} placeholder="Pose ta question ...">
     <button on:click|stopPropagation={sendMessage}>Send</button>
   </div>
-</div>
-
-<div class="left-column">
-  {#each navItems as item (item.text)}
-    <div class="nav-item">
-      <img src={item.logo} alt="Logo" width="24" height="24">
-      <a href={item.href}>{item.text}</a>
-    </div>
-  {/each}
 </div>

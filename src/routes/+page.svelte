@@ -1,6 +1,6 @@
 <script>
 	/**
-	 * @type {import('./$types').PageData}
+	 </div>* @type {import('./$types').PageData}
 	 */
 	export let data;
 </script>
@@ -11,43 +11,135 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
     }
 
     #login {
         text-align: center;
-        border: 2px solid #ccc; /* Ajouter une bordure de 2px solide avec couleur #ccc */
-        padding: 20px; /* Ajouter un padding de 20px à l'intérieur du cadre */
-        max-width: 400px; /* Définir une largeur maximale de 400px */
-        width: 100%; /* Rendre le cadre responsive */
-        box-sizing: border-box; /* Inclure le padding et la bordure dans la largeur totale */
-        margin: 0 auto; /* Centrer horizontalement */
+        border: 2px solid #ccc;
+        padding: 20px;
+        max-width: 400px;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
-    /* Ajouter un style pour les éléments du formulaire */
     form {
-        margin-top: 20px; /* Ajouter un espace de 20px au-dessus du formulaire */
+        margin-top: 20px;
     }
 
-    /* Ajouter un style pour les éléments du formulaire */
     form label {
-        display: block; /* Afficher les labels sur une nouvelle ligne */
-        margin-bottom: 10px; /* Ajouter un espace de 10px en bas des labels */
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    button[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+        margin-top: 10px;
+        display: block;
+    }
+
+    .error {
+        color: red;
+        margin-top: 10px;
+    }
+
+    .person-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-text {
+        font-size: 24px;
+    }
+
+    /* New styles for professional look */
+    #login {
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .person-image img {
+        border-radius: 50%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-text {
+        font-size: 32px;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    .error {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+
+    form label {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+        font-size: 16px;
+        padding: 12px;
+        margin-bottom: 16px;
+    }
+
+    button[type="submit"] {
+        font-size: 16px;
+        padding: 12px 24px;
+        border-radius: 4px;
+    }
+
+    a {
+        font-size: 14px;
+        margin-top: 16px;
     }
 </style>
 
 <div id="login">
-    <h1><img src="personne.png" alt="Person" width="90"><br>Login</h1>
+    <h1 class="person-image"><img src="personne.png" alt="Person" width="90"></h1>
+    <h1 class="login-text">Se connecter</h1>
     {#if data.error}
         <div class="error">
-            <p>Wrong username/password</p>
+            <p>Mauvais nom d'utilisateur/mot de passe</p>
         </div>
     {/if}
     <form action="/login?/verify" method="POST">
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" /><br> <!-- Placer le champ email suivi d'un saut de ligne -->
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" /><br> <!-- Placer le champ password suivi d'un saut de ligne -->
-        <button type="submit">Login</button>
+        <input type="email" name="email" id="email" /><br>
+        <label for="password">Mot de passe</label>
+        <input type="password" name="password" id="password" /><br>
+        <button type="submit">Se connecter</button>
     </form>
     <a href="/register">Créer un compte</a>
     <a href="/forgot-password">Mot de passe oublié ?</a>
