@@ -14,18 +14,31 @@
   let message = '';
   let messages = [];
   let expanded = false;
+  let isReplying = false; // new variable
+
 
   function toggleChatbox() {
     expanded = !expanded;
   }
 
-  function sendMessage() {
-    if (message.trim() !== '') {
-      const timestamp = new Date().toLocaleTimeString(); // get the current time
-      messages = [...messages, { text: message, type: 'outgoing', timestamp, sender: 'You' }];
-      message = '';
-    }
+  async function sendMessage() {
+  if (message.trim() !== '') {
+    const timestamp = new Date().toLocaleTimeString(); // get the current time
+    messages = [...messages, { text: message, type: 'outgoing', timestamp, sender: 'You' }];
+    isReplying = true; // start replying
+
+    // Send an automatic reply after a message is sent
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    isReplying = false; // stop replying
+
+
+    const replyTimestamp = new Date().toLocaleTimeString();
+    messages = [...messages, { text: "Haploïde signifie qu'une cellule ou un organisme ne possède qu'un seul jeu de chromosomes. Chez les humains, seules les cellules reproductrices comme les ovules et les spermatozoïdes sont haploïdes, contenant 23 chromosomes uniques, contrairement aux cellules diploïdes qui en ont 23 paires", type: 'incoming', timestamp: replyTimestamp, sender: 'Coach AI' }];
+
+    message = '';
   }
+}
+
 
   function handleKeyDown(event) {
     if (event.key === 'Enter') {
@@ -37,7 +50,9 @@
   messages.push({ text: 'Bonjour, je suis ton coach virtuel.', type: 'incoming', timestamp, sender: 'Coach AI' });
   messages.push({ text: "Comment puis-je t'aider aujourd'hui ?", type: 'incoming', timestamp, sender:'Coach AI' });
 </script>
-
+{#if isReplying}
+  <p>...</p>
+{/if}
 <style>
   :global(body) {
     margin: 0;
