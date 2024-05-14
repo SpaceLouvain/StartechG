@@ -402,7 +402,8 @@
 </div>
 
     {:else}
-        <h1>Score: {score2}/{questions.length}</h1>
+    <h1>Score: {score2}/{questions.length}</h1>
+    score2={score2/questions.length}
     {/if}
 </div>
     

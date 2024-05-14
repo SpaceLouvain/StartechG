@@ -73,9 +73,9 @@
 
   .chatbox {
     position: fixed;
-    right: 15px;
+    right: 5px;
     top: 140px;
-    width: 400px;
+    width: 200px;
     height: 50px;
     background-color: #f8f8f8;
     border: 1px solid #ccc;

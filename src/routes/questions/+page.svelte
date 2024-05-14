@@ -111,7 +111,7 @@ function handleClick() {
     </thead>
     <tbody>
         {#each tests as test (test.title)}
-            <tr class={$status.toLowerCase().replace(" ", "-")}>
+            <tr class={test.status.toLowerCase().replace(" ", "-")}>
                 <td><a href={`/test/${test.title}`}>{test.title}</a></td>                
                 <td>{test.status}</td>
                 <td>

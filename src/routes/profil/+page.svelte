@@ -27,7 +27,7 @@
 
   .box1 img {
     display: inline-block;
-    filter: invert(88%) sepia(18%) saturate(886%) hue-rotate(199deg) brightness(100%) contrast(200%);
+    filter: invert(88%)  hue-rotate(199deg) brightness(100%) contrast(200%);
     width: 30%;
     height: auto;
   }
@@ -81,42 +81,42 @@
 </style>
 
 <script>
-  
+      import { score, score1, score2 } from '/src/routes/questions/store.js';
+
 </script>
 
 <div class="main-content">
   <div class="box1">
-    <img src="\personne.png" alt="flamme">
+    <img src="\flamme.jpg" alt="flamme">
     <p>Bravo ! Votre flamme est allumée depuis 3 jours !</p>
   </div>
   <div class="box2">
     <h2>Historique</h2>
     <ul>
-      <li>Examen 2019 : Mathématiques</li>
-      <li>Biologie : ADN</li>
-      <li>Biologie : Les cellules</li>
+      <li>Examen 2023 : Biologie</li>
+
     </ul>
   </div>
   <div class="box3">
     <div class="progress-container">
       <label for="math-progress">Mathématiques:</label>
-      <progress id="math-progress" value="70" max="100"></progress>
-      <span>70%</span>
+      <progress id="math-progress" value={$score2*100} max="100"></progress>
+      <span>{$score2*100}%</span>
     </div>
     <div class="progress-container">
       <label for="physics-progress">Physique:</label>
-      <progress id="physics-progress" value="50" max="100"></progress>
-      <span>50%</span>
+      <progress id="physics-progress" value="0" max="100"></progress>
+      <span>0%</span>
     </div>
     <div class="progress-container">
       <label for="chemistry-progress">Chimie:</label>
-      <progress id="chemistry-progress" value="30" max="100"></progress>
-      <span>30%</span>
+      <progress id="chemistry-progress" value={$score1*100} max="100"></progress>
+      <span>{$score1*100}%</span>
     </div>
     <div class="progress-container">
       <label for="biology-progress">Biologie:</label>
-      <progress id="biology-progress" value="90" max="100"></progress>
-      <span>90%</span>
+      <progress id="biology-progress" value={$score*10} max="100"></progress>
+      <span>{$score*10}%</span>
     </div>
   </div>
 </div>

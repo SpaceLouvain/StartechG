@@ -1,5 +1,5 @@
 <script>
-    import { score } from '/src/routes/questions/store.js';
+    import { score1 } from '/src/routes/questions/store.js';
     import Katex from 'svelte-katex'
 
     let questions = [
@@ -164,7 +164,7 @@
     function selectAnswer(answerIndex) {
         questions[currentQuestion].selectedAnswer = answerIndex;
         if (answerIndex === questions[currentQuestion].correctAnswer) {
-            score++;
+            score1++;
         }
     }
     function handleAnswerClick(index) {
@@ -179,7 +179,7 @@
     function nextQuestion() {
         if (currentQuestion < questions.length - 1) {
             if (questions[currentQuestion].selectedAnswer === questions[currentQuestion].correctAnswer) {
-                score.update(n => n + 1);
+                score1.update(n => n + 1);
             }
             currentQuestion++;
         } else {
@@ -205,7 +205,7 @@
         if (currentQuestion > 0) {
             currentQuestion--;
             if (questions[currentQuestion].selectedAnswer === questions[currentQuestion].correctAnswer) {
-                score.update(n => n - 1);
+                score1.update(n => n - 1);
             }
         }
         showScore = false;
@@ -216,7 +216,7 @@
 </script>
 {#if showScore}
     <div>
-        <h2>Votre score : {$score} / 9</h2>
+        <h2>Votre score : {$score1} / 9</h2>
         <h3>Questions incorrectes :</h3>
         <ul>
             {#each questions as question, index}
@@ -296,7 +296,8 @@
 </div>
 
     {:else}
-        <h1>Score: {score}/{questions.length}</h1>
+    <h1>Score: {score1}/{questions.length}</h1>
+    score1={score1/questions.length}
     {/if}
 </div>
     
